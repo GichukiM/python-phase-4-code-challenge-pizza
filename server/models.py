@@ -27,15 +27,7 @@ class Restaurant(db.Model, SerializerMixin):
     def __repr__(self):
         return f"<Restaurant {self.name}>"
 
-    # def to_dict(self, include_relationships=False):
-    #     result = {
-    #         'id': self.id,
-    #         'name': self.name,
-    #         'address': self.address
-    #     }
-    #     if include_relationships:
-    #         result['restaurant_pizzas'] = [rp.to_dict(include_relationships=False) for rp in self.restaurant_pizzas]
-    #     return result
+    
 
 class Pizza(db.Model, SerializerMixin):
     __tablename__ = "pizzas"
@@ -53,15 +45,7 @@ class Pizza(db.Model, SerializerMixin):
     def __repr__(self):
         return f"<Pizza {self.name}, {self.ingredients}>"
 
-    # def to_dict(self, include_relationships=False):
-    #     result = {
-    #         'id': self.id,
-    #         'name': self.name,
-    #         'ingredients': self.ingredients
-    #     }
-    #     if include_relationships:
-    #         result['restaurant_pizzas'] = [rp.to_dict(include_relationships=False) for rp in self.restaurant_pizzas]
-    #     return result
+   
 
 class RestaurantPizza(db.Model, SerializerMixin):
     __tablename__ = "restaurant_pizzas"
@@ -85,14 +69,4 @@ class RestaurantPizza(db.Model, SerializerMixin):
     def __repr__(self):
         return f"<RestaurantPizza ${self.price}>"
 
-    # def to_dict(self, include_relationships=True):
-    #     result = {
-    #         'id': self.id,
-    #         'price': self.price,
-    #         'pizza_id': self.pizza_id,
-    #         'restaurant_id': self.restaurant_id
-    #     }
-    #     if include_relationships:
-    #         result['pizza'] = self.pizza.to_dict(include_relationships=False)
-    #         result['restaurant'] = self.restaurant.to_dict(include_relationships=False)
-    #     return result
+   
